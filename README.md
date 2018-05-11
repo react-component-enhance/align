@@ -12,12 +12,12 @@ React Align Component. Wrapper around https://github.com/yiminghe/dom-align.
 
 [npm-image]: http://img.shields.io/npm/v/rc-align.svg?style=flat-square
 [npm-url]: http://npmjs.org/package/rc-align
-[travis-image]: https://img.shields.io/travis/react-component/align.svg?style=flat-square
-[travis-url]: https://travis-ci.org/react-component/align
-[coveralls-image]: https://img.shields.io/coveralls/react-component/align.svg?style=flat-square
-[coveralls-url]: https://coveralls.io/r/react-component/align?branch=master
-[gemnasium-image]: http://img.shields.io/gemnasium/react-component/align.svg?style=flat-square
-[gemnasium-url]: https://gemnasium.com/react-component/align
+[travis-image]: https://img.shields.io/travis/react-component-enhance/align.svg?style=flat-square
+[travis-url]: https://travis-ci.org/react-component-enhance/align
+[coveralls-image]: https://img.shields.io/coveralls/react-component-enhance/align.svg?style=flat-square
+[coveralls-url]: https://coveralls.io/r/react-component-enhance/align?branch=master
+[gemnasium-image]: http://img.shields.io/gemnasium/react-component-enhance/align.svg?style=flat-square
+[gemnasium-url]: https://gemnasium.com/react-component-enhance/align
 [node-image]: https://img.shields.io/badge/node.js-%3E=_0.10-green.svg?style=flat-square
 [node-url]: http://nodejs.org/download/
 [download-image]: https://img.shields.io/npm/dm/rc-align.svg?style=flat-square
@@ -35,7 +35,7 @@ npm start
 
 http://localhost:8100/examples/
 
-online example: http://react-component.github.io/align/examples/
+online example: http://react-component-enhance.github.io/align/examples/
 
 
 ## Feature

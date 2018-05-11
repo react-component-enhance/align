@@ -4,7 +4,7 @@ sudo: false
 
 notifications:
   email:
-  - yiminghe@gmail.com
+  - zxbing0066@gmail.com
 
 node_js:
 - 6.10.0
