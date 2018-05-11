@@ -1,4 +1,4 @@
-import Align from 'rc-align';
+import Align from 'rce-align';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 

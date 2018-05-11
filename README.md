@@ -1,4 +1,4 @@
-# rc-align
+# rce-align
 ---
 
 React Align Component. Wrapper around https://github.com/yiminghe/dom-align.
@@ -10,8 +10,8 @@ React Align Component. Wrapper around https://github.com/yiminghe/dom-align.
 [![node version][node-image]][node-url]
 [![npm download][download-image]][download-url]
 
-[npm-image]: http://img.shields.io/npm/v/rc-align.svg?style=flat-square
-[npm-url]: http://npmjs.org/package/rc-align
+[npm-image]: http://img.shields.io/npm/v/rce-align.svg?style=flat-square
+[npm-url]: http://npmjs.org/package/rce-align
 [travis-image]: https://img.shields.io/travis/react-component-enhance/align.svg?style=flat-square
 [travis-url]: https://travis-ci.org/react-component-enhance/align
 [coveralls-image]: https://img.shields.io/coveralls/react-component-enhance/align.svg?style=flat-square
@@ -20,8 +20,8 @@ React Align Component. Wrapper around https://github.com/yiminghe/dom-align.
 [gemnasium-url]: https://gemnasium.com/react-component-enhance/align
 [node-image]: https://img.shields.io/badge/node.js-%3E=_0.10-green.svg?style=flat-square
 [node-url]: http://nodejs.org/download/
-[download-image]: https://img.shields.io/npm/dm/rc-align.svg?style=flat-square
-[download-url]: https://npmjs.org/package/rc-align
+[download-image]: https://img.shields.io/npm/dm/rce-align.svg?style=flat-square
+[download-url]: https://npmjs.org/package/rce-align
 
 
 ## Development
@@ -48,12 +48,12 @@ online example: http://react-component-enhance.github.io/align/examples/
 
 ## install
 
-[![rc-align](https://nodei.co/npm/rc-align.png)](https://npmjs.org/package/rc-align)
+[![rce-align](https://nodei.co/npm/rce-align.png)](https://npmjs.org/package/rce-align)
 
 ## Usage
 
 ```js
-var Align = require('rc-align');
+var Align = require('rce-align');
 var ReactDOM = require('react-dom');
 ReactDOM.render(<Align align={{}} target={function(){}}><div></div></Align>, container);
 ```
@@ -104,4 +104,4 @@ will align child with target when mounted or align is changed
 
 ## License
 
-rc-align is released under the MIT license.
+rce-align is released under the MIT license.
