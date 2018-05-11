@@ -1,35 +1,30 @@
 language: node_js
-
 sudo: false
-
 notifications:
   email:
   - ZxBing0066@gmail.com
-
 node_js:
 - 6.10.0
-
 script:
 - |
-    if [ "$TEST_TYPE" = test ]; then
-      npm test
-    else
-      npm run $TEST_TYPE
-    fi
+  if [ "$TEST_TYPE" = test ]; then
+    npm test
+  else
+    npm run $TEST_TYPE
+  fi
 env:
   matrix:
   - TEST_TYPE=lint
   - TEST_TYPE=test
   - TEST_TYPE=coverage
-
 deploy:
   - provider: npm
     skip_cleanup: true
     email: ZxBing0066@gmail.com
     api_key:
-      secure: lQyURyPedsfkEo0E5Y8rc1KEsctv3cG3R1eZ5xK4y0Fk7xcJ8bu7z8MZtmtTxBIhdTRH6DoQCz/qSHSc26trRugaJsZ/RqhZPDbibiDgkwsgu7WLDxBg5tU0GnhvyZ39T9dCC/sxNpyXImWOC4au55hlwA9Tmiyx1K74LDE9rxMn9u8W6CzIYMIJc4+0cZMUCEilphAS9THupliIVdlQbZ7e8cZyrjNJZr9ksZCPpHBat+IlM2aPvUgME08U1SkaCnV+H0qs8XkmvwoL5+z1FNnhHcb2Ntus+/3Y2mrxmJzMmg1l12kmK93M+RxKDLjW/jJ9Dxnrhgt6H0uvqp2fLvtwllCldt9Mfp8rfsL0IitnX2FPP4qBGyNB2QHtXXfux1NvvFoNWbvF3qQ9gih4sbQO8o+/iOjuMIjGPbRJPFSuogwwGhY2FhQCeIE5eGq3nB+a9EgRgtoJ8rsxtcRuLBbjFqJcVcmxQOcUX8L5JXNxYMhqabFyupT2C3Z0ijPho4CHTph9lbLd6F2zb91CmAHPxUdzcFZbRG48PC2JUBhn7a/yw6JV68Xc4YQzWH/x3SYxTjzljh2qhnnW7XYmll8syuZPxi7WykCRCuuzmiooks6V8qlHJnKqKByYlb3W6uLPE8fFW8Mc4SuC7aeBK1718fR8TK7TOLTXUJNv7i8=
+      secure: CmQPzvSKRb2RhsG3yWLVEdIK0LUhctpLjSacPFZn1L5dvdqYv5VoHI5EKNs1Y+zd3jCaQkpAzADVV2SQqIMaUfnshqo0V8jODVn/1YzPwKg8Ux0x9gp80Di7PjmB8wPqNGRVSWUBB/zll37qWTQFgpizTBBXFjtoZ8MvtwWy62UV/hCyrMt78TwMtSDdoXlXXAG5Ja137MGvDKhKIDYRR07abYAVkCUsy6nHwV2gNA61jXimw/mgeRZ/3KJBhJsQezaevOWa7AqMAQe2bXB2IwPM8l2EBkHc7XCC6VOdgnP/xcF8YqLsb0oGXqoGSBJX95MXisyp5TPAlKT7M3h+MyJm0SFIcF1MHFQhrdNU/KZ5yp7d3seCNuL99PgVh3bDjauL5MAychtTr8Lh9PYa5A7MnnuRd283N/RHeRkPI46inQy30mc4IxN+ctLxPQ+4cSPiGeG/8xuy8z9MIGztqxSKaD+gbgN/nTGESHIMDBA49XY05PZhFbS9PWS5rwtWsWINjYDcdg4Uj5A27n8MfU/MrEMC4RAdDoiQKUbGJofND+JfZuN4iBYZfNUSz8HzFh9bJKQe9nD8r2g6XbXgY+722cDkrjQh83CUZBm7Ne7TxQjkHZ2XV7wzY7OKe5ZGRT29cnn4obzhmsnPW25YLHau1Ns9eqPayUwS2cl3NYE=
     on:
       tags: true
       branch: master
       tag: next
-      condition: $TEST_TYPE = lint
+      condition: "$TEST_TYPE = lint"
