@@ -26,9 +26,9 @@ class Test extends Component {
   }
 
   forceAlign = () => {
-    this.setState({
-      align: { ...this.state.align },
-    });
+    if(this.align) {
+      this.align.forceAlign();
+    }
   }
 
   render() {
@@ -56,6 +56,7 @@ class Test extends Component {
             target={this.getTarget}
             monitorWindowResize={this.state.monitor}
             align={this.state.align}
+            ref={ref => this.align = ref}
           >
             <div
               style={{
