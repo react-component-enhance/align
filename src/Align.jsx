@@ -34,6 +34,7 @@ class Align extends Component {
     onAlign: PropTypes.func,
     monitorBufferTime: PropTypes.number,
     monitorWindowResize: PropTypes.bool,
+    monitorWindowScroll: PropTypes.bool,
     disabled: PropTypes.bool,
     children: PropTypes.any,
   };
@@ -43,6 +44,7 @@ class Align extends Component {
     onAlign: () => {},
     monitorBufferTime: 50,
     monitorWindowResize: false,
+    monitorWindowScroll: false,
     disabled: false,
   };
 
@@ -52,6 +54,9 @@ class Align extends Component {
     this.forceAlign();
     if (!props.disabled && props.monitorWindowResize) {
       this.startMonitorWindowResize();
+    }
+    if (!props.disabled && props.monitorWindowScroll) {
+      this.startMonitorWindowScroll();
     }
   }
 
@@ -82,10 +87,16 @@ class Align extends Component {
     } else {
       this.stopMonitorWindowResize();
     }
+    if (props.monitorWindowScroll && !props.disabled) {
+      this.startMonitorWindowScroll();
+    } else {
+      this.stopMonitorWindowScroll();
+    }
   }
 
   componentWillUnmount() {
     this.stopMonitorWindowResize();
+    this.stopMonitorWindowScroll();
   }
 
   startMonitorWindowResize() {
@@ -100,6 +111,21 @@ class Align extends Component {
       this.bufferMonitor.clear();
       this.resizeHandler.remove();
       this.resizeHandler = null;
+    }
+  }
+  startMonitorWindowScroll() {
+    if (!this.scrollHandler) {
+      this.scrollMonitor = buffer(this.forceAlign, this.props.monitorBufferTime);
+      window.addEventListener('scroll', this.scrollMonitor, true);
+      this.scrollHandler = true;
+    }
+  }
+
+  stopMonitorWindowScroll() {
+    if (this.scrollHandler) {
+      this.scrollMonitor.clear();
+      window.removeEventListener('scroll', this.scrollMonitor, true);
+      this.scrollHandler = null;
     }
   }
 

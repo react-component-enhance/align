@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 class Test extends Component {
   state = {
     monitor: true,
+    monitorScroll: true,
     align: {
       points: ['cc', 'cc'],
     },
@@ -24,9 +25,14 @@ class Test extends Component {
       monitor: !this.state.monitor,
     });
   }
+  toggleMonitorScroll = () => {
+    this.setState({
+      monitorScroll: !this.state.monitorScroll,
+    });
+  }
 
   forceAlign = () => {
-    if(this.align) {
+    if (this.align) {
       this.align.forceAlign();
     }
   }
@@ -41,34 +47,50 @@ class Test extends Component {
         <p>
           <button onClick={this.forceAlign}>force align</button>
           &nbsp;&nbsp;&nbsp;
-          <button onClick={this.toggleMonitor}>toggle monitor</button>
+          <button onClick={this.toggleMonitor}>
+            toggle monitor {this.state.monitor ? 'on' : 'off'}
+          </button>
+          &nbsp;&nbsp;&nbsp;
+          <button onClick={this.toggleMonitorScroll}>
+            toggle monitor scroll {this.state.monitorScroll ? 'on' : 'off'}
+          </button>
         </p>
-        <div
-          ref="container"
-          id="container"
+        <div 
           style={{
-            width: '80%',
-            height: 500,
-            border: '1px solid red',
+            height: 300,
+            overflow: 'auto',
+            padding: 50,
+            border: '1px solid blue',
           }}
         >
-          <Align
-            target={this.getTarget}
-            monitorWindowResize={this.state.monitor}
-            align={this.state.align}
-            ref={ref => this.align = ref}
+          <div
+            ref="container"
+            id="container"
+            style={{
+              width: '80%',
+              height: 500,
+              border: '1px solid red',
+            }}
           >
-            <div
-              style={{
-                position: 'absolute',
-                width: 50,
-                height: 50,
-                background: 'yellow',
-              }}
+            <Align
+              target={this.getTarget}
+              monitorWindowResize={this.state.monitor}
+              monitorWindowScroll={this.state.monitorScroll}
+              align={this.state.align}
+              ref={ref => this.align = ref}
             >
-              source
-            </div>
-          </Align>
+              <div
+                style={{
+                  position: 'absolute',
+                  width: 50,
+                  height: 50,
+                  background: 'yellow',
+                }}
+              >
+                source
+              </div>
+            </Align>
+          </div>
         </div>
       </div>
     );

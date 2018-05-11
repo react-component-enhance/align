@@ -98,6 +98,12 @@ will align child with target when mounted or align is changed
           <td>false</td>
           <td>whether realign when window is resized</td>
         </tr>
+        <tr>
+          <td>monitorWindowScroll</td>
+          <td>Boolean</td>
+          <td>false</td>
+          <td>whether realign when window is scrolled, do not support old ie before ie 9</td>
+        </tr>
     </tbody>
 </table>
 
